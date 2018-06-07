@@ -1,0 +1,55 @@
+Title:		refpull
+Language:	bash
+Author:		Daniel Haase
+Contact:	prjctntfctn@web.de
+Release:	Jun 07, 2018
+License:	GPLv3
+Dependencies:	date, ls, rm, wc, which, mkdir, tar, gpg, perl, basename, wget, obfuscate
+Usage:
+		refpull [-d <dirname>] [-r | -o] [-t] [-e] [-c] [-v | -s | -q] <hyperlink-file>
+		refpull [-h]
+
+		  -d <dirname>
+		    download files to <dirname> (default <dirname> is a date string)
+		  -r | --rename
+		    rename files by increasing numbers (1.jpg, 2.jpg, ...)
+		  -o
+		    rename files by an obfuscation of their original name
+		    (requires program called "obfuscate")
+		  -t
+		    use tar to archive files after download
+		  -e
+		    encrypt generated tar archive; implies -t
+		  -c
+		    remove single downloaded files after archiving
+		    remove plain tar archive after encrypting
+		  -v
+		    be verbose (the default)
+		  -s
+		    do not be verbose and only print success message with number of
+		    downloaded files when finished
+		  -q
+		    like -s but also suppress success message
+		  -h
+		    print this help message and exit
+
+		note:  long options are not supported
+		       if conflicting arguments are given the latter ones take effect
+		       files/directories are never overridden
+Description:
+		This basic bash script is capable of downloading online files by hyperlinks
+		stored in an ASCII file. Lines not starting with "http" (including empty lines)
+		are ignored.
+		For generating such an hyperlink file from open browser tabs I recommend a
+		browser plugin (e.g. "Export Tabs URLs" for Mozilla Firefox).
+
+		Downloaded files can be "renamed" on the fly by request. It is searched for a
+		program named "obfucate" used to obfuscate filenames in the current directory
+		and in locations of the system PATH variable. If there is such a program in the
+		current working directory it is supposed to be a perl script. System commands
+		(accessible via PATH) may be symbolic links to any kind of executable.
+
+		Optionally downloaded files can be packed as a tar archive and additionally
+		encrypted symmetrically using AES256 algorithm of GnuPG.
+
+		See usage details for additional reference.
