@@ -11,7 +11,7 @@ Usage:
 
 		  -d <dirname>
 		    download files to <dirname> (default <dirname> is a date string)
-		  -r | --rename
+		  -r
 		    rename files by increasing numbers (1.jpg, 2.jpg, ...)
 		  -o
 		    rename files by an obfuscation of their original name

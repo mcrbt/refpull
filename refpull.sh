@@ -33,7 +33,7 @@ function print_usage
 	echo "       $EXEC [-h]"; echo ""
 	echo "  -d <dirname>"
 	echo "    download files to <dirname> (default <dirname> is a date string)"
-	echo "  -r | --rename"
+	echo "  -r"
 	echo "    rename files by increasing numbers (1.jpg, 2.jpg, ...)"
 	echo "  -o"
 	echo "    rename files by an obfuscation of their original name"
