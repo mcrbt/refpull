@@ -51,7 +51,7 @@ function print_usage
 	echo "    do not be verbose and only print success message with number of"
 	echo "    downloaded files when finished"
 	echo "  -q"
-	echo "    like --summary but also suppress success message"
+	echo "    like -s but also suppress success message"
 	echo "  -h"
 	echo "    print this help message and exit"; echo ""
 	echo "note:  long options are not supported"
