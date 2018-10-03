@@ -12,7 +12,6 @@ sub apply
 	chomp $val;
 	my $bck = $val;
 	if($val =~ m/\?.*/) { return ""; }
-	#elsif($val =~ m/tumblr_.*/) { $val =~ s/tumblr_(.+)/$1/gi; return $val; }
 	my $par = substr($val, 0, (rindex($val, '/') + 1));
 	my $ext = substr($val, (rindex($val, '.') + 1));
 	$val =~ s/.+\/(.+?)/$1/g;
