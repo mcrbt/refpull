@@ -182,7 +182,7 @@ while read LINK; do
 		if [ "$NM_OUT" == "" ]; then NM_OUT="$NM_ORG"; fi
 	else NM_OUT="$NM_ORG"; fi
 	if [ -e $NM_OUT ] || [ -e "./$DIR/$NM_OUT" ]; then
-		STRP=$(echo $NM_ORG | perl -pe 's/(.+)\..+/\1/')
+		STRP=$(echo $NM_OUT | perl -pe 's/(.+)\..+/\1/')
 		NM_OUT="${STRP}_${RNCNT}.${EXT}"
 		RNCNT=$((RNCNT + 1))
 	fi
