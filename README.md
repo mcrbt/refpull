@@ -2,16 +2,16 @@
 
 ## Description
 
-This basic bash script is capable of downloading online files by hyperlinks
+This basic Bash script is capable of downloading remote files by hyperlinks
 stored in an ASCII file. Lines not starting with "`http`" (including empty
 lines) are ignored. Each of the hyperlinks should point to an accessible remote
 file. For generating such an hyperlink file from open browser tabs a browser
 plugin (e.g. "*Export Tabs URLs*" for Mozilla Firefox) can be used.
 
-Downloaded files can be "renamed" on the fly by request by either naming the
-files with consecutive numbers, or by *obfuscating* their original name.
+Downloaded files can be "renamed" on the fly by either naming the files with
+consecutive numbers, or by *obfuscating* their original name.
 
-Optionally, downloaded files can be packed as a *tar* archive and additionally
+Optionally, downloaded files can be packed as *tar* archive and additionally
 encrypted symmetrically using the *AES256* algorithm of *GnuPG*.
 
 See usage details for additional reference.
@@ -19,23 +19,24 @@ See usage details for additional reference.
 
 ### File name obfuscation
 
-It is searched for a program named "obfuscate" used to obfuscate filenames in
+It is searched for a program named "`obfuscate`", used to obfuscate filenames in
 the current directory and in locations of the system `PATH` variable. If there
-is such a program in the current working directory it is supposed to be a `perl`
+is such a program in the current working directory it is supposed to be a Perl
 script. System commands (accessible via `$PATH`) can also be symbolic links to
 any kind of executable.
 
-A basic filename obfuscation script `obfuscate.pl` is provided but any other
+A basic filename obfuscation script `obfuscate.pl` is provided, but any other
 tool could alternatively be used, as well.
 
 
-##### obfuscate.pl
+#### obfuscate.pl
 
+The provided obfuscation script works the following way.
 In general, digits in the original name remain present while consecutive
 alphabetic characters are replaced by the first character of such "word". For
 instance, the filename "`hello-obfuscation2018perl.script97.pl`" would be
-obfuscated to "`ho2018ps97.pl`". That way, a sense of information is kept, but
-any plain text contained in the original filename is no longer readable.
+obfuscated to "`ho2018ps97.pl`". That way, a little information is kept, but
+any plain text contained in the original filename is no longer guessable.
 
 
 ## Usage
